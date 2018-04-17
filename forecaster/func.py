@@ -49,7 +49,7 @@ def ProbRGivenM(radii, M, hyper):
 	'''
 	c, slope, sigma, trans = split_hyper_linear(hyper)
 	prob = np.zeros_like(M)
-	
+
 	for i in range(4):
 		ind = indicate(M, trans, i)
 		mu = c[i] + M[ind]*slope[i]
@@ -72,8 +72,8 @@ def classification( logm, trans ):
 		for isample in range(sample_size):
 			ind = indicate( logm[isample], trans[isample], iclass)
 			count[iclass] = count[iclass] + ind
-	
+
 	prob = count / np.sum(count) * 100.
-	print 'Terran %(T).1f %%, Neptunian %(N).1f %%, Jovian %(J).1f %%, Star %(S).1f %%' \
-			% {'T': prob[0], 'N': prob[1], 'J': prob[2], 'S': prob[3]}
+	print('Terran %(T).1f %%, Neptunian %(N).1f %%, Jovian %(J).1f %%, Star %(S).1f %%' \
+			% {'T': prob[0], 'N': prob[1], 'J': prob[2], 'S': prob[3]})
 	return None
