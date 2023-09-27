@@ -1,7 +1,7 @@
 forecaster
 ==========
 
-Forecaster is a probabilistic mass-radius relation. See the [original](https://github.com/chenjj2/forecaster) code for more details.
+Forecaster is a probabilistic mass-radius relation. See [original repo](https://github.com/chenjj2/forecaster) for more details.
 
 Usage
 -----
@@ -12,5 +12,7 @@ A simple example:
 
 	import forecaster
 	
-	# predict the mean and std of mass given radius measurements
-	Mmedian, Mplus, Mminus = forecaster.Rstat2M(3, 0.5)
+	# predict the mass given radius mean and standard deviation (Earth units)
+        rad = 3
+	rad_err = 0.5
+	Mmedian, Mplus, Mminus = forecaster.Rstat2M(rad, rad_err)
